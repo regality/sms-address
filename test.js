@@ -70,4 +70,10 @@ if (null !== carriers.carrier('Foobar')) {
   throw new Error('2 null fail');
 }
 
-console.log(carriers.carriers);
+//
+// LOOKUP ALL
+//
+
+console.log(carriers.lookup('Verizon Wireless', 5550002222, { heya: 'blah' }));
+console.log(carriers.lookup('Verizon'));
+//console.log(carriers.carriers);

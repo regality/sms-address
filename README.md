@@ -1,6 +1,8 @@
 sms-address
 ====================
 
+(this project may be merged into the `sms-address` module)
+
 Performs a lookup of the mobile phone carrier company name to get the sms and mms gateway email addresses for that carrier.
 
 You can use the SMS gateway address to send text messages from email.
@@ -31,6 +33,7 @@ API
   * `sms` - lookup sms domain or email
   * `mms` - lookup mms domain or email
   * `carrier` - reverse lookup carrier from sms, mms, or company name
+  * `lookup` - return an object with sms, mms, wireless, and carrier short name
 
 ### sms
 
@@ -77,4 +80,29 @@ lookups.carrier(smsMmsOrCarrierString);       // programmer-friendly carrier nam
 lookups.sms('AT&T Mobility');                 // "att"
 lookups.sms('messaging.sprintpcs.com');       // "sprint"
 lookups.carrier('5550002222@vzwpix.com');     // "verizon"
+```
+
+### lookup
+
+```javascript
+lookups.lookup(carrierStr[, phone, object]);
+```
+
+```javascript
+lookups.lookup("Verizon");
+
+{ carrier: 'verizon'
+, smsGateway: 'vtext.com'
+, mmsGateway: 'vzwpix.com'
+}
+
+
+lookups.lookup("Verizon Wireless", '5550002222', { foo: "bar" });
+
+{ foo: 'bar'
+, wireless: true
+, carrier: 'verizon'
+, smsAddress: '5550002222@vtext.com
+, mmsAddress: '5550002222@vzwpix.com
+}
 ```

@@ -86,7 +86,8 @@ function createTestCarrier(carrierName) {
   return testCarrier;
 }
 
-function lookup(type, map) {
+function lookup(type, number, map) {
+  map = map || {};
   var ctype = (type||'').replace(/-/, '').replace(/\s+/g, ' ')
     ;
 
@@ -100,7 +101,7 @@ function lookup(type, map) {
       }
     }
 
-    if ((carrier.test||createTestCarrier(carrier))(ctype)) {
+    if ((carrier.test||createTestCarrier(carrier.name))(ctype)) {
       if (true === typeof carrier.wireless) {
         map.wireless = true;
       } else {
@@ -115,12 +116,18 @@ function lookup(type, map) {
       }
 
       map.carrier = carrier.name;
-      if (map.wireless) {
-        if (carrier.sms) {
-          map.smsGateway = formatNum(map.number) + '@' + carrier.sms; 
+      if (carrier.sms) {
+        if (number) {
+          map.smsAddress = formatNum(number) + '@' + carrier.sms; 
+        } else {
+          map.smsGateway = carrier.sms; 
         }
-        if (carrier.mms) {
-          map.mmsGateway = formatNum(map.number) + '@' + carrier.mms; 
+      }
+      if (carrier.mms) {
+        if (number) {
+          map.mmsAddress = formatNum(number) + '@' + carrier.mms; 
+        } else {
+          map.mmsGateway = carrier.mms; 
         }
       }
 
