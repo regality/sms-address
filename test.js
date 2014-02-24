@@ -1,9 +1,9 @@
 'use strict';
 
-var carriers = require('./carriers')
+var carriers = require('./')
   ;
 
-// SMS LOOKUP
+// SMS LOOKUP (old API)
 
 if ('5550002222@vtext.com' !== carriers(5550002222, 'Verizon Wireless')) {
   throw new Error('carrier num@vtext fail');
