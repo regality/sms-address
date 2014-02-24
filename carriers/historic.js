@@ -77,11 +77,12 @@ module.exports = [
   , "carrier": "Esendex"
   , "sms": "echoemail.net"
   }
-, { "name": "gvoice"
+, { "name": "googlevoice"
   , "carrier": "Google Voice"
   // valid only for receiving, not for sending
   , "sms": "txt.voice.google.com"
   , "test": function (string) {
+      // allow googlevoice or gvoice or google voice
       var re = /\b(g(oogle)?\s*voice)\b/i
         ;
 
