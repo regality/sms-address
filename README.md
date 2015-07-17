@@ -1,7 +1,7 @@
 
 ### Basic Usage
 
-sms-address returns an email address that can be used to send an SMS
+sms-address returns an email address that can be used to send an SMS (or MMS)
 message.
 
 It takes two arguments, phone number, and carrier.
@@ -25,9 +25,12 @@ console.log(sms.carriers)
 {
   "Alaska Communications": "msg.acsalaska.com",
   "Alltel": "sms.alltelwireless.com",
+  "Alltel-mms": "mms.alltelwireless.com",
   "Ameritech": "paging.acswireless.com",
   "AT&T": "txt.att.net",
+  "AT&T-mms": "mms.att.net",
   "BellSouth": "bellsouth.cl",
   "Bluegrass Cellular": "sms.bluecell.com",
+  "Bluegrass Cellular-mms": "mms.myblueworks.com",
   // and so on and so forth ...
 ```
