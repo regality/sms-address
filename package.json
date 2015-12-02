@@ -2,7 +2,7 @@
   "name": "sms-address",
   "description": "Get the email address to send SMS messages to based on number and carrier.",
   "author": "Adam Blackburn <adam@ifit.com>",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "main": "sms.js",
   "keywords": ["sms", "email", "phone"],
   "repository": "git://github.com/regality/sms-address.git",
